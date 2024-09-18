@@ -39,8 +39,8 @@ class func:
 
 class main:
     
-    def __init__(self, ner) -> None:
-        self.ner=ner
+    def __init__(self) -> None:
+        pass
 
     def hello (self) -> None:
         while True:
@@ -57,5 +57,5 @@ class main:
                 print('Ди наху')
 
 fif=func()
-a=main(5)
+a=main()
 a.hello()
