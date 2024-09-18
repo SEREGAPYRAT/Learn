@@ -1,7 +1,7 @@
 import os 
 
 class func:
-    def __init__(self,) -> None:
+    def __init__(self) -> None:
         pass
 
     def create(self):
