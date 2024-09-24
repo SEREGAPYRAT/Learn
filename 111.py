@@ -1,51 +1,13 @@
-
+import sys
 import os 
+from package.modules.fun import Func 
 
-class func:
-    def __init__(self) -> None:
-        pass
-
-    def create(self):
-        name=input('Введите название файла с его расширением \n Пример: file.txt \n')
-        f=open(name,'w')
-        f.write(input('Введите содержимаое файла'))
-        f.close()
-
-    def read(self):
-        name=input('Введите название файла который хотите прочитать\n')
-        if name in os.listdir():
-            f=open(name,'r')
-            print(f.read())
-            f.close()
-        else:
-            print('файла с таким именем не существует')
-
-    def update(self):
-        name=input('Введите название файла который хотите изменить\n')
-        if name in os.listdir():
-            os.remove(name)
-            f=open(name,'w')
-            f.write(input('Введите содержимаое файла'))
-            f.close()
-        else:
-            print('файла с таким именем не существует')
-
-    def delete(self):
-        name=input('Введите название файла который хотите изменить\n')
-        if name in os.listdir():
-            os.remove(name)
-            print('Удаление успешно завершено')
-        else:
-            print('файла с таким именем не существует')
-
-class main:
+class Main:
     
-    def __init__(self) -> None:
-        pass
 
     def hello (self) -> None:
         while True:
-            x=input("1-Создать файл.\n2-Прочитать файл.\n3-Обновить файл.\n4-Удалить файл.\n")
+            x=input("1-Создать файл.\n2-Прочитать файл.\n3-Обновить файл.\n4-Удалить файл.\n5-Выход из программы\n")
             if x == "1":
                 fif.create()
             elif x == "2":
@@ -54,9 +16,11 @@ class main:
                 fif.update()
             elif x == "4":
                 fif.delete()
+            elif x == '5':
+                sys.exit()
             else:
-                print('Ди наху')
+                print('Неверно введено значение')
 
-fif=func()
-a=main()
+fif=Func(os.getcwd())
+a=Main()
 a.hello()
