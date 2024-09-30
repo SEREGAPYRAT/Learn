@@ -1,6 +1,5 @@
-import sys
 import os 
-from package.modules.fun import Func 
+from package import Func 
 
 class Main:
     
@@ -17,7 +16,7 @@ class Main:
             elif x == "4":
                 fif.delete()
             elif x == '5':
-                sys.exit()
+                break
             else:
                 print('Неверно введено значение')
 

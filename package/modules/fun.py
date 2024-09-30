@@ -10,16 +10,15 @@ class Func:
 
     def create(self):
         name=input('Введите название файла с его расширением \n Пример: file.txt \n')
-        f=open(self.place+'/'+name,'w')
-        f.write(input('Введите содержимаое файла'))
-        f.close()
+        with open(self.place+'/'+name,'w') as f:
+            f.write(input('Введите содержимаое файла'))
+        
 
     def read(self):
         name=input('Введите название файла который хотите прочитать\n')
         if name in os.listdir():
-            f=open(self.place+'/'+name,'r')
-            print(f.read())
-            f.close()
+            with open(self.place+'/'+name,'r') as f:
+                print(f.read())
         else:
             print('файла с таким именем не существует')
 
@@ -27,9 +26,8 @@ class Func:
         name=input('Введите название файла который хотите изменить\n')
         if name in self.place():
             os.remove(name)
-            f=open(name,'w')
-            f.write(input('Введите содержимаое файла'))
-            f.close()
+            with open(self.place+'/'+name,'w') as f:
+                f.write(input('Введите содержимаое файла'))
         else:
             print('файла с таким именем не существует')
 
